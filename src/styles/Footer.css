@@ -1,0 +1,248 @@
+/* =========================
+   Footer — Professional Polish
+   ========================= */
+
+.footer {
+  grid-area: footer;
+  text-align: center;
+  padding: 14px 16px;
+  background: linear-gradient(180deg, #dbeefd 0%, #c5e6f8 100%);
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  margin-top: 40px;
+
+  /* stronger separation from page */
+  box-shadow:
+    0 -6px 18px rgba(0,0,0,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+
+  position: relative;
+  z-index: 1000;
+}
+
+/* =========================
+   Content Layout
+   ========================= */
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Logo Badge (NO border box)
+   ========================= */
+
+.footer-logo {
+  height: 26px;
+  background: #ffffff;
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.12);
+
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* =========================
+   Bounded Content Box
+   (Everything BELOW logo)
+   ========================= */
+
+.footer-box {
+  width: 100%;
+  max-width: 1000px;
+  padding: 14px 16px;
+  margin-top: 6px;
+
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 14px;
+
+  border: 1px solid rgba(30, 58, 138, 0.18);
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  backdrop-filter: blur(6px);
+}
+
+/* =========================
+   Description Text
+   ========================= */
+
+.footer-desc {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #334155;
+  max-width: 920px;
+  text-align: center;
+  
+  /* Card-like structure */
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  
+  /* Subtle gradient overlay */
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-desc::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.8), 
+    transparent
+  );
+}
+
+/* =========================
+   Contact Row
+   ========================= */
+
+.footer-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; /* Add vertical alignment */
+  gap: 10px;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.footer-contacts a {
+  color: #1e3a8a;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px; /* Increased font size */
+}
+
+.footer-contacts a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* LinkedIn link styling */
+.linkedin-link {
+  display: flex;
+  align-items: center;
+}
+
+.linkedin-text-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px; /* Much smaller padding */
+  background: #0077b5;
+  color: white;
+  font-size: 11px; /* Much smaller font to match footer text */
+  font-weight: 600; /* Slightly less bold */
+  border-radius: 3px; /* Smaller border radius */
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+  min-height: 24px; /* Much smaller height */
+  min-width: 65px; /* Smaller width */
+  box-shadow: none; /* Remove shadow for cleaner look */
+  transition: all 0.2s ease; /* Faster transition */
+}
+
+.linkedin-text-icon:hover {
+  background: #005885; /* Darker blue on hover */
+  transform: none; /* Remove lift effect */
+}
+
+.linkedin-logo {
+  height: 16px;
+  width: 16px;
+  object-fit: contain;
+}
+
+.contact-sep {
+  color: #64748b;
+}
+
+/* =========================
+   Office Cards
+   ========================= */
+
+.footer-offices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.footer-offices .office-item {
+  background: rgba(255,255,255,0.65);
+  border-radius: 12px;
+  padding: 10px;
+
+  border: 1px solid rgba(30,58,138,0.15);
+
+  box-shadow:
+    0 3px 10px rgba(0,0,0,0.08);
+
+  backdrop-filter: blur(4px);
+}
+
+.footer-offices .office-item strong {
+  display: block;
+  color: #1e3a8a;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.footer-offices .office-item span {
+  display: block;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #334155;
+}
+
+.footer-offices .office-item a {
+  color: #1d4ed8;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.footer-offices .office-item a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Responsive tighten
+   ========================= */
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 12px 10px;
+  }
+
+  .footer-desc {
+    font-size: 12px;
+  }
+
+  .footer-box {
+    padding: 12px;
+  }
+}

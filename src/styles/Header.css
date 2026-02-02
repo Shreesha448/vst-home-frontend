@@ -1,0 +1,317 @@
+/* =========================
+   Header — Anchored Professional
+   ========================= */
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+
+  gap: 16px;
+  padding: 8px 22px;
+
+  background: #ffffff;
+  color: #1f2937;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  /* ✅ stronger visual anchor */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+  border-bottom: 2px solid #e5e7eb;
+
+  box-sizing: border-box;
+  height: 84px; /* Match App.css */
+}
+
+/* ===== brand accent line ===== */
+
+.header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    #ed2124 0%,
+    #ed2124 30%,
+    #1d4ed8 60%,
+    #60a5fa 100%
+  );
+}
+
+/* =========================
+   Logo
+   ========================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 36px;
+  width: auto;
+}
+
+/* =========================
+   Title
+   ========================= */
+
+.header-brand {
+  text-align: center;
+}
+
+.header-brand h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* brand coloring */
+
+.brand-venture { color: #ed2124; }
+.brand-soft { color: #1d4ed8; }
+.brand-intrasite { color: #64748b; }
+.brand-dash { color: #0f172a; }
+
+/* =========================
+   Right Info Section
+   ========================= */
+
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative; /* Ensure proper positioning context */
+}
+
+/* =========================
+   Date/Time Section
+   ========================= */
+
+.header-datetime {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Force all header buttons to same size */
+.header-info .user-button,
+.header-info .info-box {
+  width: auto; /* Let content determine width */
+  min-width: 60px; /* Minimum width for consistency */
+  text-align: center;
+  justify-content: center;
+}
+
+/* =========================
+   Info Boxes
+   ========================= */
+
+.info-box {
+  background: #f1f5f9;
+  border: none;
+  border-radius: 999px;
+
+  padding: 6px 12px;
+  min-height: 34px;
+  height: 34px; /* Fixed height for consistency */
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+
+  box-shadow: inset 0 0 0 1px #e2e8f0;
+
+  transition: all 0.18s ease;
+}
+
+.info-box:hover {
+  background: #e9eff6;
+}
+
+
+/* =========================
+   User Button
+   ========================= */
+
+.user-button {
+  background: #eef2ff;
+  border: none;
+  border-radius: 999px;
+
+  padding: 8px 16px; /* Increased padding for larger size */
+  min-height: 40px;
+  height: 40px; /* Increased height */
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 13px; /* Slightly larger font */
+  font-weight: 600;
+  color: #1e293b;
+
+  box-shadow: inset 0 0 0 1px #dbeafe;
+
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.user-button:hover {
+  background: #e0e7ff;
+}
+
+
+/* =========================
+   Avatar
+   ========================= */
+
+.user-avatar {
+  width: 24px; /* Increased from 22px */
+  height: 24px; /* Increased from 22px */
+  background: #ddd6fe;
+  color: #5b21b6;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px; /* Slightly larger icon */
+  font-weight: 700;
+}
+
+
+/* =========================
+   Dropdown
+   ========================= */
+
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); /* Professional gradient */
+  border: 1px solid rgba(59, 130, 246, 0.2); /* Professional blue border */
+  border-radius: 12px;
+
+  padding: 16px;
+  min-width: 240px;
+
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(59, 130, 246, 0.1); /* Subtle blue shadow */
+  z-index: 1000;
+  backdrop-filter: blur(8px); /* Modern blur effect */
+}
+
+/* User dropdown header */
+.user-dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 12px;
+}
+
+.user-dropdown-header .user-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%); /* Gradient avatar */
+  color: #5b21b6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.user-role {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* User dropdown actions */
+.user-dropdown-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dropdown-item {
+  background: none;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 13px;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-item:hover {
+  background: #f1f5f9;
+  color: #1e40af;
+  transform: translateX(2px);
+}
+
+.dropdown-item.logout-btn {
+  color: #dc2626;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 4px;
+  padding-top: 12px;
+}
+
+.dropdown-item.logout-btn:hover {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+/* Add icons for dropdown items */
+.dropdown-item::before {
+  content: "•";
+  color: #9ca3af;
+  font-size: 16px;
+}
+
+.dropdown-item.logout-btn::before {
+  content: "🚪";
+  color: #dc2626;
+}

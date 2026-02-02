@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/VST-Logo.png"; // adjust path to your logo file
+import logo from "../assets/VST-Logo.png";
+import "../styles/Header.css";
 
 function Header() {
   const [dateTime, setDateTime] = useState(new Date());
   const [location, setLocation] = useState("Fetching...");
+  const [showUserMenu, setShowUserMenu] = useState(false);
 
   // Update clock every second
   useEffect(() => {
@@ -44,11 +46,56 @@ function Header() {
         <img src={logo} alt="VentureSoft Logo" />
       </div>
 
-      {/* Right side - Info */}
+      {/* Center - Brand Title */}
+      <div className="header-brand">
+        <h1>
+          <span className="brand-venture">Venture</span>
+          <span className="brand-soft">Soft</span>
+          <span className="brand-dash">-</span>
+          <span className="brand-intrasite">IntraNet</span>
+        </h1>
+      </div>
+
+      {/* Right side - User Button and Date/Time */}
       <div className="header-info">
-        <span>{location}</span>
-        <span>{dateTime.toLocaleDateString()}</span>
-        <span>{dateTime.toLocaleTimeString()}</span>
+        <button 
+          className="user-button"
+          onClick={() => setShowUserMenu(!showUserMenu)}
+        >
+          <div className="user-avatar">
+            <span>👤</span>
+          </div>
+          <span className="user-button-text">User</span>
+        </button>
+
+        {/* Date/Time inside header */}
+        <div className="header-datetime">
+          <div className="info-box date-box">
+            <span>📅 {dateTime.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+          </div>
+          <div className="info-box time-box">
+            <span>🕐 {dateTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</span>
+          </div>
+        </div>
+
+        {/* User Dropdown Menu */}
+        {showUserMenu && (
+          <div className="user-dropdown">
+            <div className="user-dropdown-header">
+              <div className="user-avatar">
+                <span>👤</span>
+              </div>
+              <div className="user-info">
+                <span className="user-name">Guest User</span>
+              </div>
+            </div>
+            <div className="user-dropdown-actions">
+              <button className="dropdown-item">Profile</button>
+              <button className="dropdown-item">Settings</button>
+              <button className="dropdown-item logout-btn">Logout</button>
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );

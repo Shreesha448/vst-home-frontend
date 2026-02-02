@@ -1,0 +1,114 @@
+/* ------------------------- */
+/* LEFT PANEL — CLEAN RED    */
+/* ------------------------- */
+
+.left-panel {
+  grid-area: left;
+  padding: 15px;
+  background: #e31b23;   /* flat company red */
+  color: #ffffff;
+  border-radius: 14px;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+
+  /* 🔥 remove heavy outer bump */
+  box-shadow: none;
+}
+
+/* Section titles */
+
+.left-panel h3 {
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #ffffff;
+}
+
+/* ------------------------- */
+/* NAV BUTTONS               */
+/* ------------------------- */
+
+.nav-item {
+  padding: 11px 14px;
+  margin-bottom: 10px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+
+  background: #ef3a3e; /* same red family */
+  border: 1px solid rgba(255,255,255,0.25);
+
+  /* ✅ single soft shadow only */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+
+  transition: all 0.18s ease;
+}
+
+.nav-item a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+}
+
+.nav-item:hover {
+  background: #c9151a;
+  transform: translateX(3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+/* ------------------------- */
+/* OFFICE CARD               */
+/* ------------------------- */
+
+.locations-section .office-item {
+  background: #ef3a3e;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 12px;
+
+  /* ✅ only one shadow */
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+}
+
+.locations-section .office-item strong {
+  display: block;
+  color: #ffe082;
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.locations-section .office-item span {
+  display: block;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #ffffff;
+}
+
+.locations-section .office-item a {
+  display: block;
+  font-size: 12px;
+  color: #fff3b0;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.locations-section .office-item a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* Divider */
+
+.left-panel hr {
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,0.35);
+  margin: 16px 0;
+  border-radius: 2px;
+}

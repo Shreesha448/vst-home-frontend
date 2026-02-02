@@ -1,44 +1,26 @@
 import React from "react";
-import { useEffect } from "react";
-import Header from "./components/Header";
-import LeftPanel from "./components/LeftPanel";
-import CenterPanel from "./components/CenterPanel"; // updated
-import RightPanel from "./components/RightPanel";
-import Footer from "./components/Footer";
-import BackToTop from "./components/BackToTop";
+import HomePage from "./components/HomePage";
+import MockLogin from "./components/MockLogin";
+import { AuthProvider, useAuth } from "./auth/AuthContext";
 import "./App.css";
 
+const AuthGate = () => {
+  const { user } = useAuth();
+
+  // If logged in → show HomePage
+  if (user) {
+    return <HomePage />;
+  }
+
+  // Else → show Login
+  return <MockLogin />;
+};
+
 function App() {
-  useEffect(() => {
-  fetch("http://localhost:5000/api/hello")
-    .then(res => res.json())
-    .then(data => console.log(data));
-}, []);
-
   return (
-    <>
-      <header className="header">
-        <Header />
-      </header>
-
-      <div className="app-container">
-        <aside className="left-panel">
-          <LeftPanel />
-        </aside>
-        <main className="center-panel">
-          <CenterPanel /> {/* updated */}
-        </main>
-        <aside className="right-panel">
-          <RightPanel />
-        </aside>
-        
-        <footer className="footer">
-          <Footer />
-        </footer>
-      </div>
-
-      <BackToTop />
-    </>
+    <AuthProvider>
+      <AuthGate />
+    </AuthProvider>
   );
 }
 
