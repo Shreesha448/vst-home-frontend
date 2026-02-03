@@ -9,9 +9,8 @@ const RightPanel = () => {
 
   return (
     <div className="right-panel">
-      <h3>Company Policies</h3>
-
       <div className="policy-list">
+        <h3>Company Policies</h3>
         <button
           className="policy-item training-button policy-button"
           onClick={() => window.open(`${BACKEND_URL}/privacy_policy.pdf`, "_blank")}

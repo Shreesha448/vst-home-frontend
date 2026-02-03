@@ -11,7 +11,7 @@
   flex-direction: column;
   flex-grow: 1;
   gap: 12px; /* space between items */
-  overflow-y: scroll; /* Always show scrollbar for visibility */
+  overflow-y: auto; /* Show scrollbar only when RSS feed overflows */
   overflow-x: hidden; /* prevent horizontal scroll */
   overscroll-behavior: contain;
   min-height: 0; /* Allow flex item to shrink */

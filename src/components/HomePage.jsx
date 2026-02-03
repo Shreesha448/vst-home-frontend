@@ -54,7 +54,7 @@ const HomePage = () => {
       </div>
     </div>
 
-    {/* Footer MUST be outside the homepage container */}
+    {/* Footer - Outside layout */}
     <footer className="footer">
       <Footer />
     </footer>

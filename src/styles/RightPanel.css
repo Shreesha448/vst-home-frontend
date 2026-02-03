@@ -10,12 +10,34 @@
   border-radius: 10px;
 
   position: sticky;
-  top: 84px;                        /* matches header height */
+  top: 0;
 
   height: fit-content;
   overflow: visible;                /* ❌ no internal scroll */
 
   align-self: start;
+}
+
+/* Remove margin from first h3 heading */
+.right-panel h3:first-child {
+  margin-top: 0;
+}
+
+/* =========================
+   Policy List Section
+   ========================= */
+
+.policy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  margin-top: 0;
+  order: -1;
+}
+
+.policy-list h3 {
+  margin: 0 0 8px 0;
 }
 
 /* =========================

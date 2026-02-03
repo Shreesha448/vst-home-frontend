@@ -80,7 +80,7 @@ function CenterPanel() {
 
   /* ---------------- RENDER ---------------- */
   return (
-    <div ref={panelRef}>
+    <div className="center-panel" ref={panelRef}>
       <h2>Latest Blogs</h2>
 
       {loading && <p>Loading blogs...</p>}

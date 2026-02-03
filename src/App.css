@@ -10,11 +10,11 @@ html, body, #root {
 /* ===== PAGE WRAPPER ===== */
 .homepage {
   padding-top: 84px; /* Header height */
+  padding-bottom: 100px; /* Add space for footer */
   min-height: calc(100vh - 84px); /* Stretch from header to bottom */
-  max-height: calc(100vh - 84px); /* Prevent overflow */
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Prevent page scrolling */
+  /* Remove max-height and overflow to allow proper footer positioning */
 }
 
 /* ===== MAIN APP LAYOUT ===== */
