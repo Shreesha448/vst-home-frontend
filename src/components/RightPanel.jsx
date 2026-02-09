@@ -3,7 +3,7 @@ import "../styles/RightPanel.css";
 
 const RightPanel = () => {
   // ✅ BACKEND BASE URL (static files served from /public folder internally)
-  const BACKEND_URL = "http://13.232.25.75:5000";
+  const BACKEND_URL = "http://13.127.8.58:5000";
 
   // PDFs are natively viewable in browser (no viewer needed)
 
@@ -65,10 +65,18 @@ const RightPanel = () => {
 
           <button
             className="training-button posh-test-button"
-            onClick={() => window.open(`${BACKEND_URL}/POSH_Test.pdf`, "_blank")}
+            onClick={() => {
+              // navigate within the SPA to the POSH test page
+              if (window.history && window.history.pushState) {
+                window.history.pushState({}, "", "#/posh-test");
+              } else {
+                window.location.hash = "/posh-test";
+              }
+              window.dispatchEvent(new HashChangeEvent("hashchange"));
+            }}
           >
             <span className="training-text">POSH Test</span>
-            <span className="training-type">PDF</span>
+            <span className="training-type">PAGE</span>
           </button>
         </div>
       </div>

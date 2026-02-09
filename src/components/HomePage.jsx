@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import LeftPanel from "./LeftPanel";
 import CenterPanel from "./CenterPanel";
 import RightPanel from "./RightPanel";
+import POSHTest from "./POSHTest";
 import Footer from "./Footer";
 import BackToTop from "./BackToTop";
 import "../App.css";
@@ -29,6 +30,15 @@ const HomePage = () => {
     fetchRSSData();
   }, []);
 
+  // Simple hash-based routing for the center panel (no react-router added)
+  const [route, setRoute] = useState(window.location.hash || "");
+
+  useEffect(() => {
+    const onHash = () => setRoute(window.location.hash || "");
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+
   return (
   <>
     {/* Header Section */}
@@ -37,6 +47,7 @@ const HomePage = () => {
     {/* Main Content Area */}
     <div className="homepage">
       <div className="app-container">
+        
         {/* Left Panel - Navigation */}
         <aside className="left-panel">
           <LeftPanel />
@@ -44,7 +55,7 @@ const HomePage = () => {
 
         {/* Center Panel - Main Content */}
         <main className="center-panel">
-          <CenterPanel />
+          {route === "#/posh-test" ? <POSHTest /> : <CenterPanel />}
         </main>
 
         {/* Right Panel - Policies/Info */}

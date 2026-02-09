@@ -14,7 +14,7 @@ html, body, #root {
   min-height: calc(100vh - 84px); /* Stretch from header to bottom */
   display: flex;
   flex-direction: column;
-  /* Remove max-height and overflow to allow proper footer positioning */
+  /* Remove height constraints to allow proper scrolling */
 }
 
 /* ===== MAIN APP LAYOUT ===== */

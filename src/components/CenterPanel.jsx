@@ -11,7 +11,7 @@ function CenterPanel() {
 
   const panelRef = useRef(null);
 
-  const API_BASE = import.meta.env.VITE_API_URL || "http://13.232.25.75:5000";
+  const API_BASE = import.meta.env.VITE_API_URL || "http://13.127.8.58:5000";
 
   /* ---------------- FETCH POSTS ---------------- */
   useEffect(() => {
@@ -49,8 +49,8 @@ function CenterPanel() {
 
   /* ---------------- LOOPING DATA ---------------- */
   const items = useMemo(() => {
-    const base = (posts || []).filter(Boolean).slice(0, 10);
-    return [...base, ...base]; // duplicate for infinite loop
+    const base = (posts || []).filter(Boolean).slice(0, 20); // Increase to 20 posts
+    return [...base, ...base]; // duplicate for infinite loop (40 total)
   }, [posts]);
 
   /* ---------------- SCROLL LOOP LOGIC ---------------- */
