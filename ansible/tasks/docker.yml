@@ -1,0 +1,16 @@
+---
+- name: update system package
+  yum:  
+    name: "*"
+    state: latest
+
+- name: Install docker 
+  yum: 
+    name: docker
+    state: present
+
+- name: start docker service
+  service: 
+    name: docker  
+    state: started
+    enabled: yes

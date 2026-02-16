@@ -1,0 +1,10 @@
+---
+- name: pull and run the docker image
+  docker_container:
+    name: "{{Container_name}}"
+    image: "{{Image_name}}"
+    state: started
+    restart_policy: unless-stopped
+    ports:
+      - "{{Port}}"
+      

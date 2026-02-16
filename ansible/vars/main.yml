@@ -1,0 +1,3 @@
+docker_image: vst-home-backend
+container_name: vst-home-backend
+app_port: 3000
