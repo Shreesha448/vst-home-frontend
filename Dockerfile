@@ -6,10 +6,12 @@ COPY package*.json /
 
 RUN npm install 
 
+COPY . .
+
 RUN npm run build
 
-COPY . .
+COPY --from=build /app/dist /usr/share/nginx/html
 
 EXPOSE 3000
 
-CMD ["npm", "run", "start"]
+CMD ["nginx", "-g", "daemon off;"]
